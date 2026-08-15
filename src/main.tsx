@@ -10,6 +10,7 @@ import BillDiscounting5Screens from "./src/modules/bill-discounting/BillDiscount
 import BillDiscounting5ScreensAlt from "./src/modules/bill-discounting/BillDiscounting5ScreensAlt";
 import BillDiscountingDetailed2Screens from "./src/modules/bill-discounting/BillDiscountingDetailed2Screens";
 import StorageSample4Screens from "./src/modules/storage-sample/StorageSample4Screens";
+import TraderMarket12Screens from "./src/modules/trader-market/TraderMarket12Screens";
 import "./styles/index.css";
 
 function RootRouter(){
@@ -35,6 +36,10 @@ function RootRouter(){
   if(route.startsWith('storage-') || route.startsWith('sample-')) {
     const id = route.replace(/^(?:storage|sample)-/, '').replace(/-/g, ':');
     return <StorageSample4Screens screen={id} />;
+  }
+  if(route.startsWith('trader-') || route==='marketplace' || route==='discover') {
+    const id = route.replace(/^(?:trader-|marketplace|discover)-?/, '').replace(/-/g, ':') || '2041:194';
+    return <TraderMarket12Screens screen={id} />;
   }
   return <Admin20ScreenRouter />;
 }
