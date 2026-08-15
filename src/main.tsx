@@ -12,6 +12,7 @@ import BillDiscountingDetailed2Screens from "./src/modules/bill-discounting/Bill
 import StorageSample4Screens from "./src/modules/storage-sample/StorageSample4Screens";
 import TraderMarket12Screens from "./src/modules/trader-market/TraderMarket12Screens";
 import TraderNegotiations7Router from "./src/modules/trader-negotiations/TraderNegotiations7Screens";
+import Weighment4Screens from "./modules/ca-weighment/Weighment4Screens";
 import "./styles/index.css";
 
 function RootRouter(){
@@ -22,30 +23,16 @@ function RootRouter(){
   if(route.startsWith('buyer-') || route==='buyers') return <Buyer5ScreenRouter />;
   if(route.startsWith('listing-') || route.startsWith('auction-')) return <ListingAuction10ScreenRouter />;
   if(route.startsWith('ca-weighment') || route.startsWith('ca-start-weighment') || route.startsWith('ca-weighing') || route.startsWith('ca-weight-variance') || route.startsWith('ca-final-weight') || route.startsWith('ca-generate-bill') || route.startsWith('ca-settlement')) return <WeighmentSettlement7Router />;
-  if(route.startsWith('bill-detail-')) {
-    const id = route.replace(/^bill-detail-/, '').replace(/-/g, ':');
-    return <BillDiscounting5ScreensAlt screen={id} />;
+  if(route.startsWith('ca-new-weighment-') || route==='ca-weighment-4') {
+    const id=route.replace(/^ca-new-weighment-/,'').replace(/-/g,':') || '2041:222';
+    return <Weighment4Screens screen={id} />;
   }
-  if(route.startsWith('bill-detailed-')) {
-    const id = route.replace(/^bill-detailed-/, '').replace(/-/g, ':');
-    return <BillDiscountingDetailed2Screens screen={id} />;
-  }
-  if(route.startsWith('bill-')) {
-    const id = route.replace(/^bill-/, '').replace(/-/g, ':');
-    return <BillDiscounting5Screens screen={id} />;
-  }
-  if(route.startsWith('storage-') || route.startsWith('sample-')) {
-    const id = route.replace(/^(?:storage|sample)-/, '').replace(/-/g, ':');
-    return <StorageSample4Screens screen={id} />;
-  }
-  if(route.startsWith('trader-negotiations-') || route.startsWith('trader-contract-') || route.startsWith('trader-amendment-') || route==='negotiations' || route==='contracts' || route==='request-amendment') {
-    const id = route.replace(/^(?:trader-negotiations-|trader-contract-|trader-amendment-)/, '').replace(/-/g, ':') || '2041:206';
-    return <TraderNegotiations7Router screen={id} />;
-  }
-  if(route.startsWith('trader-') || route==='marketplace' || route==='discover') {
-    const id = route.replace(/^(?:trader-|marketplace|discover)-?/, '').replace(/-/g, ':') || '2041:194';
-    return <TraderMarket12Screens screen={id} />;
-  }
+  if(route.startsWith('bill-detail-')) { const id = route.replace(/^bill-detail-/, '').replace(/-/g, ':'); return <BillDiscounting5ScreensAlt screen={id} />; }
+  if(route.startsWith('bill-detailed-')) { const id = route.replace(/^bill-detailed-/, '').replace(/-/g, ':'); return <BillDiscountingDetailed2Screens screen={id} />; }
+  if(route.startsWith('bill-')) { const id = route.replace(/^bill-/, '').replace(/-/g, ':'); return <BillDiscounting5Screens screen={id} />; }
+  if(route.startsWith('storage-') || route.startsWith('sample-')) { const id = route.replace(/^(?:storage|sample)-/, '').replace(/-/g, ':'); return <StorageSample4Screens screen={id} />; }
+  if(route.startsWith('trader-negotiations-') || route.startsWith('trader-contract-') || route.startsWith('trader-amendment-') || route==='negotiations' || route==='contracts' || route==='request-amendment') { const id = route.replace(/^(?:trader-negotiations-|trader-contract-|trader-amendment-)/, '').replace(/-/g, ':') || '2041:206'; return <TraderNegotiations7Router screen={id} />; }
+  if(route.startsWith('trader-') || route==='marketplace' || route==='discover') { const id = route.replace(/^(?:trader-|marketplace|discover)-?/, '').replace(/-/g, ':') || '2041:194'; return <TraderMarket12Screens screen={id} />; }
   return <Admin20ScreenRouter />;
 }
 
