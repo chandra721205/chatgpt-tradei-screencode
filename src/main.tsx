@@ -11,6 +11,7 @@ import BillDiscounting5ScreensAlt from "./src/modules/bill-discounting/BillDisco
 import BillDiscountingDetailed2Screens from "./src/modules/bill-discounting/BillDiscountingDetailed2Screens";
 import StorageSample4Screens from "./src/modules/storage-sample/StorageSample4Screens";
 import TraderMarket12Screens from "./src/modules/trader-market/TraderMarket12Screens";
+import TraderNegotiations7Router from "./src/modules/trader-negotiations/TraderNegotiations7Screens";
 import "./styles/index.css";
 
 function RootRouter(){
@@ -36,6 +37,10 @@ function RootRouter(){
   if(route.startsWith('storage-') || route.startsWith('sample-')) {
     const id = route.replace(/^(?:storage|sample)-/, '').replace(/-/g, ':');
     return <StorageSample4Screens screen={id} />;
+  }
+  if(route.startsWith('trader-negotiations-') || route.startsWith('trader-contract-') || route.startsWith('trader-amendment-') || route==='negotiations' || route==='contracts' || route==='request-amendment') {
+    const id = route.replace(/^(?:trader-negotiations-|trader-contract-|trader-amendment-)/, '').replace(/-/g, ':') || '2041:206';
+    return <TraderNegotiations7Router screen={id} />;
   }
   if(route.startsWith('trader-') || route==='marketplace' || route==='discover') {
     const id = route.replace(/^(?:trader-|marketplace|discover)-?/, '').replace(/-/g, ':') || '2041:194';
