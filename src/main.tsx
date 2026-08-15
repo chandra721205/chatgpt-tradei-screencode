@@ -13,6 +13,7 @@ import StorageSample4Screens from "./src/modules/storage-sample/StorageSample4Sc
 import TraderMarket12Screens from "./src/modules/trader-market/TraderMarket12Screens";
 import TraderNegotiations7Router from "./src/modules/trader-negotiations/TraderNegotiations7Screens";
 import Weighment4Screens from "./modules/ca-weighment/Weighment4Screens";
+import Inventory8Screens from "./src/modules/inventory/Inventory8Screens";
 import "./styles/index.css";
 
 function RootRouter(){
@@ -34,6 +35,7 @@ function RootRouter(){
   if(route.startsWith('storage-') || route.startsWith('sample-')) { const id = route.replace(/^(?:storage|sample)-/, '').replace(/-/g, ':'); return <StorageSample4Screens screen={id} />; }
   if(route.startsWith('trader-negotiations-') || route.startsWith('trader-contract-') || route.startsWith('trader-amendment-') || route==='negotiations' || route==='contracts' || route==='request-amendment') { const id = route.replace(/^(?:trader-negotiations-|trader-contract-|trader-amendment-)/, '').replace(/-/g, ':') || '2041:206'; return <TraderNegotiations7Router screen={id} />; }
   if(route.startsWith('trader-') || route==='marketplace' || route==='discover') { const id = route.replace(/^(?:trader-|marketplace|discover)-?/, '').replace(/-/g, ':') || '2041:194'; return <TraderMarket12Screens screen={id} />; }
+  if(route.startsWith('inventory-') || route==='inventory') { const id = route.replace(/^inventory-?/,'').replace(/-/g,':') || '2041:226'; return <Inventory8Screens screen={id} />; }
   return <Admin20ScreenRouter />;
 }
 
