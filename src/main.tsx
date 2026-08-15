@@ -6,6 +6,7 @@ import CommissionAgentProducers8Router from "./src/modules/commission-agent/Comm
 import Buyer5ScreenRouter from "./modules/buyer/Buyer5Screens";
 import ListingAuction10ScreenRouter from "./src/modules/listing-auction/ListingAuction10Screens";
 import WeighmentSettlement7Router from "./modules/weighment/WeighmentSettlement7Screens";
+import BillDiscounting5Screens from "./src/modules/bill-discounting/BillDiscounting5Screens";
 import "./styles/index.css";
 
 function RootRouter(){
@@ -16,6 +17,10 @@ function RootRouter(){
   if(route.startsWith('buyer-') || route==='buyers') return <Buyer5ScreenRouter />;
   if(route.startsWith('listing-') || route.startsWith('auction-')) return <ListingAuction10ScreenRouter />;
   if(route.startsWith('ca-weighment') || route.startsWith('ca-start-weighment') || route.startsWith('ca-weighing') || route.startsWith('ca-weight-variance') || route.startsWith('ca-final-weight') || route.startsWith('ca-generate-bill') || route.startsWith('ca-settlement')) return <WeighmentSettlement7Router />;
+  if(route.startsWith('bill-')) {
+    const id = route.replace(/^bill-/, '').replace(/-/g, ':');
+    return <BillDiscounting5Screens screen={id} />;
+  }
   return <Admin20ScreenRouter />;
 }
 
