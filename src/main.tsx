@@ -14,6 +14,7 @@ import TraderMarket12Screens from "./src/modules/trader-market/TraderMarket12Scr
 import TraderNegotiations7Router from "./src/modules/trader-negotiations/TraderNegotiations7Screens";
 import Weighment4Screens from "./modules/ca-weighment/Weighment4Screens";
 import Inventory8Screens from "./src/modules/inventory/Inventory8Screens";
+import BuyerCrmQuotationOrdersRouter from "../modules/buyer-crm/BuyerCrmQuotationOrdersScreens";
 import "./styles/index.css";
 
 function RootRouter(){
@@ -21,6 +22,7 @@ function RootRouter(){
   if(route.startsWith('auth-') || route==='auth') return <AuthOnboarding11ScreenRouter />;
   if(route.startsWith('kyc-') || route==='kyc' || route==='market-prices') return <KycMarket14Router />;
   if(route.startsWith('ca-producers') || route.startsWith('ca-add-producer') || route.startsWith('ca-producer-profile') || route.startsWith('ca-confirm-arrival') || route.startsWith('ca-advance-ledger') || route.startsWith('ca-producer-activity') || route.startsWith('ca-report-discrepancy') || route.startsWith('ca-issue-advance')) return <CommissionAgentProducers8Router />;
+  if(route.startsWith('buyer-crm-') || route==='buyers-crm' || route==='create-quotation' || route==='negotiation' || route==='sales-orders') return <BuyerCrmQuotationOrdersRouter />;
   if(route.startsWith('buyer-') || route==='buyers') return <Buyer5ScreenRouter />;
   if(route.startsWith('listing-') || route.startsWith('auction-')) return <ListingAuction10ScreenRouter />;
   if(route.startsWith('ca-weighment') || route.startsWith('ca-start-weighment') || route.startsWith('ca-weighing') || route.startsWith('ca-weight-variance') || route.startsWith('ca-final-weight') || route.startsWith('ca-generate-bill') || route.startsWith('ca-settlement')) return <WeighmentSettlement7Router />;
