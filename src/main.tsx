@@ -9,6 +9,7 @@ import WeighmentSettlement7Router from "./modules/weighment/WeighmentSettlement7
 import BillDiscounting5Screens from "./src/modules/bill-discounting/BillDiscounting5Screens";
 import BillDiscounting5ScreensAlt from "./src/modules/bill-discounting/BillDiscounting5ScreensAlt";
 import BillDiscountingDetailed2Screens from "./src/modules/bill-discounting/BillDiscountingDetailed2Screens";
+import StorageSample4Screens from "./src/modules/storage-sample/StorageSample4Screens";
 import "./styles/index.css";
 
 function RootRouter(){
@@ -30,6 +31,10 @@ function RootRouter(){
   if(route.startsWith('bill-')) {
     const id = route.replace(/^bill-/, '').replace(/-/g, ':');
     return <BillDiscounting5Screens screen={id} />;
+  }
+  if(route.startsWith('storage-') || route.startsWith('sample-')) {
+    const id = route.replace(/^(?:storage|sample)-/, '').replace(/-/g, ':');
+    return <StorageSample4Screens screen={id} />;
   }
   return <Admin20ScreenRouter />;
 }
