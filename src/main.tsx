@@ -23,10 +23,11 @@ function RootRouter(){
   if(route.startsWith('buyer-') || route==='buyers') return <Buyer5ScreenRouter />;
   if(route.startsWith('listing-') || route.startsWith('auction-')) return <ListingAuction10ScreenRouter />;
   if(route.startsWith('ca-weighment') || route.startsWith('ca-start-weighment') || route.startsWith('ca-weighing') || route.startsWith('ca-weight-variance') || route.startsWith('ca-final-weight') || route.startsWith('ca-generate-bill') || route.startsWith('ca-settlement')) return <WeighmentSettlement7Router />;
-  if(route.startsWith('ca-new-weighment-') || route==='ca-weighment-4') {
-    const id=route.replace(/^ca-new-weighment-/,'').replace(/-/g,':') || '2041:222';
-    return <Weighment4Screens screen={id} />;
-  }
+  if(route.startsWith('ca-new-weighment-')) { const id = route.replace(/^ca-new-weighment-/,'').replace(/-/g,':') || '2041:222'; return <Weighment4Screens screen={id} />; }
+  if(route==='ca-weighment-tasks') return <Weighment4Screens screen="2041:222" />;
+  if(route==='ca-weighment-start') return <Weighment4Screens screen="2041:223" />;
+  if(route==='ca-weighment-variance') return <Weighment4Screens screen="2041:224" />;
+  if(route==='ca-weighment-final') return <Weighment4Screens screen="2041:225" />;
   if(route.startsWith('bill-detail-')) { const id = route.replace(/^bill-detail-/, '').replace(/-/g, ':'); return <BillDiscounting5ScreensAlt screen={id} />; }
   if(route.startsWith('bill-detailed-')) { const id = route.replace(/^bill-detailed-/, '').replace(/-/g, ':'); return <BillDiscountingDetailed2Screens screen={id} />; }
   if(route.startsWith('bill-')) { const id = route.replace(/^bill-/, '').replace(/-/g, ':'); return <BillDiscounting5Screens screen={id} />; }
