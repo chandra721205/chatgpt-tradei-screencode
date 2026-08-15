@@ -8,6 +8,7 @@ import ListingAuction10ScreenRouter from "./src/modules/listing-auction/ListingA
 import WeighmentSettlement7Router from "./modules/weighment/WeighmentSettlement7Screens";
 import BillDiscounting5Screens from "./src/modules/bill-discounting/BillDiscounting5Screens";
 import BillDiscounting5ScreensAlt from "./src/modules/bill-discounting/BillDiscounting5ScreensAlt";
+import BillDiscountingDetailed2Screens from "./src/modules/bill-discounting/BillDiscountingDetailed2Screens";
 import "./styles/index.css";
 
 function RootRouter(){
@@ -21,6 +22,10 @@ function RootRouter(){
   if(route.startsWith('bill-detail-')) {
     const id = route.replace(/^bill-detail-/, '').replace(/-/g, ':');
     return <BillDiscounting5ScreensAlt screen={id} />;
+  }
+  if(route.startsWith('bill-detailed-')) {
+    const id = route.replace(/^bill-detailed-/, '').replace(/-/g, ':');
+    return <BillDiscountingDetailed2Screens screen={id} />;
   }
   if(route.startsWith('bill-')) {
     const id = route.replace(/^bill-/, '').replace(/-/g, ':');
