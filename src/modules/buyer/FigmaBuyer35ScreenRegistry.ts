@@ -4,6 +4,7 @@ export type BuyerScreenRegistryEntry = {
   figmaUrl: string;
   component: string;
   implementationStatus: "implemented" | "partial" | "blocked";
+  visualVerification: "verified" | "pending" | "blocked";
 };
 
 const base = "https://www.figma.com/design/hKY3pin20vvMPcVAn3Yi6I/trade-app-master-copy---Copy---Copy-?node-id=";
@@ -22,6 +23,7 @@ export const figmaBuyer35ScreenRegistry: BuyerScreenRegistryEntry[] = screens.ma
   nodeId: `2041:${id}`,
   title,
   component,
-  implementationStatus: "implemented",
+  implementationStatus: "partial",
+  visualVerification: "pending",
   figmaUrl: `${base}2041-${id}`,
 }));
