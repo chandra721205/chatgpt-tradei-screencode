@@ -1,1 +1,1 @@
-export { default } from "./BuyerWorkflow35Screens.impl";
+export { default } from "./BuyerWorkflow35Screens.Figma";
