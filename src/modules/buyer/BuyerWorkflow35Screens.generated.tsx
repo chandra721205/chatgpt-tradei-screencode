@@ -1,1 +1,1 @@
-export { default } from "./BuyerRequirements15Screens";
+export { default } from "./BuyerWorkflow35Screens.Figma";
