@@ -6,4 +6,5 @@ export const buyerWorkflow35ScreenManifest = figmaBuyer35ScreenRegistry.map((ent
   source: entry.figmaUrl,
   component: entry.component,
   implementationStatus: entry.implementationStatus,
+  visualVerification: entry.visualVerification,
 }));
