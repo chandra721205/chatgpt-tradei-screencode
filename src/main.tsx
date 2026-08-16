@@ -11,6 +11,7 @@ import BillDiscounting5Screens from "./src/modules/bill-discounting/BillDiscount
 import BillDiscounting5ScreensAlt from "./src/modules/bill-discounting/BillDiscounting5ScreensAlt";
 import BillDiscountingDetailed2Screens from "./src/modules/bill-discounting/BillDiscountingDetailed2Screens";
 import StorageSample4Screens from "./src/modules/storage-sample/StorageSample4Screens";
+import StorageOperations18Screens from "./src/modules/storage/StorageOperations18Screens";
 import TraderMarket12Screens from "./src/modules/trader-market/TraderMarket12Screens";
 import TraderNegotiations7Router from "./src/modules/trader-negotiations/TraderNegotiations7Screens";
 import Weighment4Screens from "./modules/ca-weighment/Weighment4Screens";
@@ -36,6 +37,8 @@ function RootRouter(){
   if(route.startsWith('bill-detail-')) { const id = route.replace(/^bill-detail-/, '').replace(/-/g, ':'); return <BillDiscounting5ScreensAlt screen={id} />; }
   if(route.startsWith('bill-detailed-')) { const id = route.replace(/^bill-detailed-/, '').replace(/-/g, ':'); return <BillDiscountingDetailed2Screens screen={id} />; }
   if(route.startsWith('bill-')) { const id = route.replace(/^bill-/, '').replace(/-/g, ':'); return <BillDiscounting5Screens screen={id} />; }
+  if(route.startsWith('storage18-')) { const id = route.replace(/^storage18-/, '').replace(/-/g, ':') || '2041:312'; return <StorageOperations18Screens screen={id} />; }
+  if(route==='storage18') return <StorageOperations18Screens screen="2041:312" />;
   if(route.startsWith('storage-') || route.startsWith('sample-')) { const id = route.replace(/^(?:storage|sample)-/, '').replace(/-/g, ':') || '2041:194'; return <StorageSample4Screens screen={id} />; }
   if(route.startsWith('trader-negotiations-') || route.startsWith('trader-contract-') || route.startsWith('trader-amendment-') || route==='negotiations' || route==='contracts' || route==='request-amendment') { const id = route.replace(/^(?:trader-negotiations-|trader-contract-|trader-amendment-)/, '').replace(/-/g, ':') || '2041:206'; return <TraderNegotiations7Router screen={id} />; }
   if(route.startsWith('trader-') || route==='marketplace' || route==='discover') { const id = route.replace(/^(?:trader-|marketplace|discover)-?/, '').replace(/-/g, ':') || '2041:194'; return <TraderMarket12Screens screen={id} />; }
