@@ -1,0 +1,11 @@
+export type BuyerScreenRegistryEntry = {
+  nodeId: string;
+  title: string;
+  figmaUrl: string;
+};
+
+const base = "https://www.figma.com/design/hKY3pin20vvMPcVAn3Yi6I/trade-app-master-copy---Copy---Copy-?node-id=";
+
+export const figmaBuyer35ScreenRegistry: BuyerScreenRegistryEntry[] = [
+  [277,"Buyer Dashboard"],[278,"Post Requirement"],[279,"RFQ Detail"],[280,"Browse Lots"],[281,"Live Bidding"],[282,"Hire Inspector"],[283,"Inspection Report"],[284,"Track Delivery"],[285,"Confirm Delivery"],[286,"Record Payment"],[287,"My Ledger"],[288,"Rate This Seller"],[289,"Raise Dispute"],[290,"Dispute Chat"],[291,"Repeat Purchase"],[292,"Payment Methods"],[293,"Orders"],[294,"Order Detail"],[295,"Seller Profile"],[296,"Notifications"],[297,"Buyer Profile"],[298,"Settings"],[299,"Saved Sellers"],[300,"Saved Lots"],[301,"Support"],[302,"Verification"],[303,"Documents"],[304,"Trade Credit"],[305,"Add Payment Method"],[306,"Manage Bank Account"],[307,"Security"],[308,"Transaction History"],[309,"Buyer Notifications"],[310,"Payment Methods"],[311,"More"],
+].map(([id,title]) => ({nodeId:`2041:${id}`,title,figmaUrl:`${base}2041-${id}`}));
