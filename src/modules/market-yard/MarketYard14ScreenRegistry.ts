@@ -1,0 +1,16 @@
+export const marketYard14ScreenRegistry = [
+  { nodeId: '2041:355', title: 'Guntur Market Yard Dashboard', route: 'market-yard-2041-355' },
+  { nodeId: '2041:361', title: 'Tax Collection', route: 'market-yard-2041-361' },
+  { nodeId: '2041:366', title: 'Andhra Pradesh Overview', route: 'market-yard-2041-366' },
+  { nodeId: '2041:362', title: 'Daily Arrival Report', route: 'market-yard-2041-362' },
+  { nodeId: '2041:356', title: 'Gate Entry', route: 'market-yard-2041-356' },
+  { nodeId: '2041:367', title: 'Compliance Audit Log', route: 'market-yard-2041-367' },
+  { nodeId: '2041:357', title: 'Manual Entry', route: 'market-yard-2041-357' },
+  { nodeId: '2041:359', title: 'Auction Board', route: 'market-yard-2041-359' },
+  { nodeId: '2041:365', title: 'Guntur Market Yards District Dashboard', route: 'market-yard-2041-365' },
+  { nodeId: '2041:368', title: 'Ministry of Agriculture Overview', route: 'market-yard-2041-368' },
+  { nodeId: '2041:358', title: 'Queue Management', route: 'market-yard-2041-358' },
+  { nodeId: '2041:364', title: 'Dispute Oversight', route: 'market-yard-2041-364' },
+  { nodeId: '2041:363', title: 'Price Bulletin', route: 'market-yard-2041-363' },
+  { nodeId: '2041:360', title: 'Weighbridge', route: 'market-yard-2041-360' },
+] as const;
