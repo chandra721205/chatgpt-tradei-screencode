@@ -15,6 +15,7 @@ import TraderNegotiations7Router from "./src/modules/trader-negotiations/TraderN
 import Weighment4Screens from "./modules/ca-weighment/Weighment4Screens";
 import Inventory8Screens from "./src/modules/inventory/Inventory8Screens";
 import Finance20Screens from "./src/modules/finance/Finance20Screens";
+import Transporter15ScreenRouter from "../Transporter15ScreenRouter";
 import "./styles/index.css";
 
 function RootRouter(){
@@ -38,6 +39,7 @@ function RootRouter(){
   if(route.startsWith('trader-') || route==='marketplace' || route==='discover') { const id = route.replace(/^(?:trader-|marketplace|discover)-?/, '').replace(/-/g, ':') || '2041:194'; return <TraderMarket12Screens screen={id} />; }
   if(route.startsWith('inventory-') || route==='inventory') { const id = route.replace(/^inventory-?/,'').replace(/-/g,':') || '2041:226'; return <Inventory8Screens screen={id} />; }
   if(route.startsWith('finance-') || route==='finance') { const id = route.replace(/^finance-?/,'').replace(/-/g,':') || '2041:242'; return <Finance20Screens screen={id} />; }
+  if(route.startsWith('transporter-')) return <Transporter15ScreenRouter />;
   return <Admin20ScreenRouter />;
 }
 
