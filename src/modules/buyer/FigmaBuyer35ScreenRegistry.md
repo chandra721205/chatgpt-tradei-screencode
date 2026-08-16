@@ -1,0 +1,1 @@
+35 requested Figma buyer nodes are registered in `FigmaBuyer35ScreenRegistry.ts` and `figmaBuyer35Nodes.ts`. Detailed Figma-derived screens inspected include 2041:277, 2041:278, 2041:279, 2041:280, 2041:281 and 2041:310.
