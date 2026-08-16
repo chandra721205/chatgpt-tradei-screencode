@@ -17,12 +17,17 @@ import TraderNegotiations7Router from "./src/modules/trader-negotiations/TraderN
 import Weighment4Screens from "./modules/ca-weighment/Weighment4Screens";
 import Inventory8Screens from "./src/modules/inventory/Inventory8Screens";
 import Finance20Screens from "./src/modules/finance/Finance20Screens";
+import MarketYard14Screens from "./src/modules/market-yard/MarketYard14Screens";
 import "./styles/index.css";
 
 function RootRouter(){
-  const route=window.location.hash.replace(/^#/,'');
+  const route=window.location.hash.replace(/^#/,"");
   if(route.startsWith('auth-') || route==='auth') return <AuthOnboarding11ScreenRouter />;
   if(route.startsWith('kyc-') || route==='kyc' || route==='market-prices') return <KycMarket14Router />;
+  if(route.startsWith('market-yard-') || route==='market-yard' || route==='market-yard-202-7') {
+    const id = route === 'market-yard' ? '2041:355' : route.replace(/^market-yard-/, '').replace(/-/g, ':') || '2041:355';
+    return <MarketYard14Screens screen={id} />;
+  }
   if(route.startsWith('ca-producers') || route.startsWith('ca-add-producer') || route.startsWith('ca-producer-profile') || route.startsWith('ca-confirm-arrival') || route.startsWith('ca-advance-ledger') || route.startsWith('ca-producer-activity') || route.startsWith('ca-report-discrepancy') || route.startsWith('ca-issue-advance')) return <CommissionAgentProducers8Router />;
   if(route.startsWith('buyer35-')) { const id = route.replace(/^buyer35-/, '').replace(/-/g, ':') || '2041:277'; return <BuyerWorkflow35Figma nodeId={id} />; }
   if(route==='buyer35') return <BuyerWorkflow35Figma nodeId="2041:277" />;
@@ -37,7 +42,7 @@ function RootRouter(){
   if(route.startsWith('bill-detail-')) { const id = route.replace(/^bill-detail-/, '').replace(/-/g, ':'); return <BillDiscounting5ScreensAlt screen={id} />; }
   if(route.startsWith('bill-detailed-')) { const id = route.replace(/^bill-detailed-/, '').replace(/-/g, ':'); return <BillDiscountingDetailed2Screens screen={id} />; }
   if(route.startsWith('bill-')) { const id = route.replace(/^bill-/, '').replace(/-/g, ':'); return <BillDiscounting5Screens screen={id} />; }
-  if(route.startsWith('storage18-')) { const id = route.replace(/^storage18-/, '').replace(/-/g, ':') || '2041:312'; return <StorageOperations18Screens screen={id} />; }
+  if(route.startsWith('storage18-')) { const id = route.replace(/^storage18-/,'').replace(/-/g,':') || '2041:312'; return <StorageOperations18Screens screen={id} />; }
   if(route==='storage18') return <StorageOperations18Screens screen="2041:312" />;
   if(route.startsWith('storage-') || route.startsWith('sample-')) { const id = route.replace(/^(?:storage|sample)-/, '').replace(/-/g, ':') || '2041:194'; return <StorageSample4Screens screen={id} />; }
   if(route.startsWith('trader-negotiations-') || route.startsWith('trader-contract-') || route.startsWith('trader-amendment-') || route==='negotiations' || route==='contracts' || route==='request-amendment') { const id = route.replace(/^(?:trader-negotiations-|trader-contract-|trader-amendment-)/, '').replace(/-/g, ':') || '2041:206'; return <TraderNegotiations7Router screen={id} />; }
