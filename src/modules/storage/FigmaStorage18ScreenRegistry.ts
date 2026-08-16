@@ -3,8 +3,8 @@ export type Storage18ScreenRegistryEntry = {
   title: string;
   component: string;
   route: string;
-  implementationStatus: 'implemented';
-  visualVerification: 'pending';
+  implementationStatus: 'implemented_from_figma_context' | 'fully_verified';
+  visualVerification: 'pending' | 'verified';
 };
 
 const screens: Array<[string, string, string, string]> = [
@@ -28,6 +28,17 @@ const screens: Array<[string, string, string, string]> = [
   ['2041:332','Storage Reports','StorageReports','storage18-2041-332'],
 ];
 
+/**
+ * Figma contexts were fetched for all 18 requested nodes and each route maps to
+ * an individual React/TypeScript screen. Exact visual verification is still
+ * pending because a rendered browser comparison against the Figma screenshots
+ * was not available in this environment.
+ */
 export const figmaStorage18ScreenRegistry: Storage18ScreenRegistryEntry[] = screens.map(([nodeId, title, component, route]) => ({
-  nodeId, title, component, route, implementationStatus: 'implemented', visualVerification: 'pending',
+  nodeId,
+  title,
+  component,
+  route,
+  implementationStatus: 'implemented_from_figma_context',
+  visualVerification: 'pending',
 }));
