@@ -17,6 +17,7 @@ import TraderNegotiations7Router from "./src/modules/trader-negotiations/TraderN
 import Weighment4Screens from "./modules/ca-weighment/Weighment4Screens";
 import Inventory8Screens from "./src/modules/inventory/Inventory8Screens";
 import Finance20Screens from "./src/modules/finance/Finance20Screens";
+import FigmaFI12Screens from "./modules/fi/FigmaFI12Screens";
 import "./styles/index.css";
 
 function RootRouter(){
@@ -37,6 +38,8 @@ function RootRouter(){
   if(route.startsWith('bill-detail-')) { const id = route.replace(/^bill-detail-/, '').replace(/-/g, ':'); return <BillDiscounting5ScreensAlt screen={id} />; }
   if(route.startsWith('bill-detailed-')) { const id = route.replace(/^bill-detailed-/, '').replace(/-/g, ':'); return <BillDiscountingDetailed2Screens screen={id} />; }
   if(route.startsWith('bill-')) { const id = route.replace(/^bill-/, '').replace(/-/g, ':'); return <BillDiscounting5Screens screen={id} />; }
+  if(route.startsWith('fi12-')) { const id = route.replace(/^fi12-/, '').replace(/-/g, ':') || '2041:333'; return <FigmaFI12Screens screen={id} />; }
+  if(route==='fi12') return <FigmaFI12Screens screen="2041:333" />;
   if(route.startsWith('storage18-')) { const id = route.replace(/^storage18-/, '').replace(/-/g, ':') || '2041:312'; return <StorageOperations18Screens screen={id} />; }
   if(route==='storage18') return <StorageOperations18Screens screen="2041:312" />;
   if(route.startsWith('storage-') || route.startsWith('sample-')) { const id = route.replace(/^(?:storage|sample)-/, '').replace(/-/g, ':') || '2041:194'; return <StorageSample4Screens screen={id} />; }
